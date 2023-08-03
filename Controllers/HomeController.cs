@@ -26,16 +26,16 @@ public class HomeController : Controller
 
     public IActionResult Juego()
     {
-        ViewBag.Nombre = Juego._username;
+        /*ViewBag.Nombre = Juego._username;
         ViewBag.Puntaje = Juego._puntajeActual;
-        ViewBag.Opciones = Juego._respuestas;
+        ViewBag.Opciones = Juego._respuestas;*/
         return View();
     }
 
     public IActionResult Fin()
     {
-        ViewBag.Nombre = Juego._username;
-        ViewBag.Puntaje = Juego._puntajeActual;
+        /*ViewBag.Nombre = Juego._username;
+        ViewBag.Puntaje = Juego._puntajeActual;*/
         return View();
     }
 
