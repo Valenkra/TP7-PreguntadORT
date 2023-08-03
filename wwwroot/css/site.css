@@ -2,6 +2,13 @@ html {
   font-size: 14px;
 }
 
+
+@font-face {
+  font-family: Mikado;
+  src: url(../assets/MikadoBold_DEMO.ttf);
+}
+
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
