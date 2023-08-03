@@ -1,3 +1,5 @@
+namespace TP7_PreguntadORT.Models;
+
 public class Categorias {
     public int IdRespuestas {get;set;}
     public int IdPregunta {get;set;}
