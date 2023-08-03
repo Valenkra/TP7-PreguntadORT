@@ -18,7 +18,28 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult ConfigurarJuego()
+    {
+        // Juego.InicializarJuego();
+        return View();
+    }
+
+    public IActionResult Juego()
+    {
+        ViewBag.Nombre = Juego._username;
+        ViewBag.Puntaje = Juego._puntajeActual;
+        ViewBag.Opciones = Juego._respuestas;
+        return View();
+    }
+
+    public IActionResult Fin()
+    {
+        return View();
+    }
+
+    
+    [HttpPost]
+    public IActionResult Respuesta()
     {
         return View();
     }
