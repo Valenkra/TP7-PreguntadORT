@@ -34,6 +34,8 @@ public class HomeController : Controller
 
     public IActionResult Fin()
     {
+        ViewBag.Nombre = Juego._username;
+        ViewBag.Puntaje = Juego._puntajeActual;
         return View();
     }
 
