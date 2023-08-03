@@ -25,7 +25,7 @@ static class BD {
         return _ObtenerDif;
     }
 
-    public static List<Preguntas> ObtenerPreguntas(int dificultad, int categoria){
+    public static List<Preguntas> ObtenerPreguntas(int IdDificultad, int IdCategoria){
         List<Preguntas> _ObtenerPregs = new List<Preguntas>();
         using(SqlConnection db = new SqlConnection(_connectionString) ){
             string SQL = "SELECT * FROM Dificultades";
