@@ -1,8 +1,0 @@
-    public static List<Dificultades> ObtenerDificultades(){
-        List<Dificultades> _ObtenerDif = new List<Dificultades>();
-        using(SqlConnection db = new SqlConnection(_connectionString) ){
-            string SQL = "SELECT * FROM Dificultades";
-            _ObtenerDif =  db.Query<Partido>(SQL).ToList();
-        }
-        return _ObtenerDif;
-    }
