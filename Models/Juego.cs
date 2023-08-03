@@ -6,4 +6,10 @@ static class Juego {
     private int  _cantidadPreguntasCorrectas;
     private List<Preguntas> _preguntas;
     private List<Respuestas> _respuestas;
+    /*
+    static void InicializarJuego(string username){
+
+
+    }
+    */
 } 
