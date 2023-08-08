@@ -20,11 +20,11 @@ public class HomeController : Controller
 
     public IActionResult ConfigurarJuego()
     {
-        // Juego.InicializarJuego();
+        Juego.InicializarJuego();
         return View();
     }
 
-    public IActionResult Juego()
+    public IActionResult Jugar()
     {
         /*ViewBag.Nombre = Juego._username;
         ViewBag.Puntaje = Juego._puntajeActual;
