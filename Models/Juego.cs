@@ -14,8 +14,31 @@ public static class Juego
         _puntajeActual = 0;
 
     }
-    public static int numero()
-    {
-        return 4;
+
+    public static void CargarPartida(string username, int dificultad, int categoria){
+        _preguntas = BD.ObtenerPreguntas(dificultad, categoria);
+        _respuestas = BD.ObtenerRespuestas(_preguntas);
+        _username = username;
+    }
+
+    public static void ObtenerProximaPregunta(){
+        bool exists = false;
+        int[] numsAlreadyChosen = new int[_preguntas.Count];
+        Random r = new Random();
+        while (!exists){
+            if(Array.IndexOf(numsAlreadyChosen, r.Next(_preguntas.Count))){
+                exists = false;
+            }else{
+                exists = true;
+            }
+        }
+        return r;
+    }
+    public static void ObtenerProximasRespuestas(int IdPregunta){
+        List<Respuestas> fewRespuestas = new List<Respuestas>();
+        int i = 4;
+        while(i > 0){
+            
+        }
     }
 } 

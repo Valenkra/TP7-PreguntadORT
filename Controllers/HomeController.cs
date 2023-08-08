@@ -21,13 +21,16 @@ public class HomeController : Controller
     public IActionResult ConfigurarJuego()
     {
         Juego.InicializarJuego();
+        ViewBag.categorias = BD.ObtenerCategorias();
+        ViewBag.dificultades = BD.ObtenerDificultades();
         return View();
     }
 
-    public IActionResult Jugar()
+    public IActionResult Jugar(int dificultad, int categoria)
     {
-        /*ViewBag.Nombre = Juego._username;
-        ViewBag.Puntaje = Juego._puntajeActual;
+        Juego._preguntas = BD.ObtenerPreguntas(dificultad, categoria);
+        Juego._respuestas = BD.ObtenerRespuestas(ViewBag.Preguntas);
+        /*ViewBag.Puntaje = Juego._puntajeActual;
         ViewBag.Opciones = Juego._respuestas;*/
         return View();
     }
