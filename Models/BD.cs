@@ -3,7 +3,7 @@ using Dapper;
 
 namespace TP7_PreguntadORT.Models;
 
-static class BD {
+public static class BD {
     private static string _connectionString = @"Server=localhost;
             DataBase=PreguntadORT; Trusted_Connection=True;";
 
