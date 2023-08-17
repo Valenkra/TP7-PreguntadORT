@@ -1,29 +1,268 @@
-html {
-  font-size: 14px;
-}
-
-
-@font-face {
-  font-family: Mikado;
-  src: url(../assets/MikadoBold_DEMO.ttf);
-}
-
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+*{
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin-bottom: 60px;
+  background-color: rgb(212, 150, 236);
+  font-family: "Mikado";
 }
+
+@font-face {
+  font-family: 'Mikado';
+  src: url("/assets/MikadoBold_DEMO.ttf");
+
+}
+
+@font-face {
+  font-family: "Magdelin-Medium";
+  src: url("/assets/magdelin_fonts/Magdelin-Medium.otf");
+}
+
+@font-face {
+  font-family: "Magdelin";
+  src: url("/assets/magdelin_fonts/Magdelin-ExtraBold.otf");
+}
+
+.logo {
+  width: 3.75%;
+
+}
+
+nav{
+  background-color: rgb(184, 74, 228);
+  height: 5%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+a:hover {
+  
+  color: #fff;
+}
+
+ul li {
+  background-color: rgb(139, 57, 172);
+  padding: .5rem 5rem;
+  margin-right: 2%;
+  border-radius: 0;
+  border: solid 5px  transparent;
+  transition: border-radius 1s, background-color .5s;
+}
+
+ul li:hover {
+  border-radius: 8px;
+  margin-right: 2%;
+  background-color: rgb(184, 74, 228);
+  border: solid 5px  rgb(139, 57, 172);
+  transition: border-radius 1s, background-color .8s, border .5s;
+}
+
+input[type=radio]{
+  height: 3rem;
+  border-radius: 0;
+}
+
+
+/* MAIN */
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 3rem;
+}
+
+.pregunta {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: "Magdelin";
+}
+
+.pregunta img {
+  width: 80%;
+}
+
+
+.index img {
+  width: 80%;
+  height: auto;
+}
+
+.index__button-play {
+  margin-top: 5px;
+  background-color: rgb(133, 95, 138);
+  padding: 1rem 10rem;
+  font-size: 1.8em;
+}
+
+.index__button-play:hover{
+  background-color: rgb(91, 61, 95);
+  border: solid 5px  rgb(133, 95, 138);
+}
+
+span {
+  text-align: justify;
+}
+
+
+/* FORM */
+
+form {
+  padding-top: 3rem;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin: .5rem 0;
+}
+
+.form__label, select {
+  display: flex;
+  flex-direction: column;
+  width: 22em;
+}
+
+select {
+  height: 2rem;
+  width: 44.8rem;
+}
+
+.form__label input {
+  height: 2rem;
+  width:100%;
+  padding-left: .5rem;
+}
+
+
+.form__div-submit {
+  display: flex;
+  justify-content: center;
+}
+
+
+.form__answer {
+  display: flex;
+  align-items: center;
+  font-family: "Magdelin";
+}
+
+
+/* SUBMIT BUTTON */
+.submit {
+  font-family: "Mikado";
+  background-color: transparent;
+  padding: .5rem 5rem;
+  border-radius: 0;
+  border: solid 5px  transparent;
+  transition: border-radius 1s, background-color .5s;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.25rem;
+  margin: 0 2px;
+}
+
+.submit:hover{
+  border-radius: 8px;
+  background-color: transparent;
+  border: solid 5px transparent;
+  transition: border-radius 1s, background-color .8s, border .5s;
+}
+
+#comenzar {
+  background-color: rgb(52, 221, 150);
+  color: rgb(27, 97, 68);
+}
+
+#comenzar:hover {
+  background-color: rgb(52, 221, 150);
+  border: solid 5px  rgb(27, 97, 68);
+}
+
+#rehacer {
+  background-color: rgb(221, 52, 52);
+  color:rgb(66, 20, 20);
+}
+
+#rehacer:hover {
+  background-color: rgb(221, 52, 52);
+  border: solid 5px  rgb(151, 23, 23);
+
+}
+
+#enviar-respuesta {
+  background-color: rgb(52, 221, 150);
+  color: #000;
+  font-size: large;
+  margin-top: 3rem;
+  padding-right: 5rem 10rem;
+}
+
+#enviar-respuesta:hover {
+  background-color: rgb(52, 221, 150);
+  border: solid 5px  rgb(27, 97, 68);
+}
+
+.respuesta{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.respuesta h1{
+margin-bottom: 2%;
+text-transform: uppercase;
+font-family: "Mikado";
+letter-spacing:7px;
+font-size:xx-large;
+}
+.respuesta img{
+  width: 35%;
+}
+.respuesta a{
+  margin-top: 4%;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Mikado";
+  font-size: xx-large;
+}
+
+.respuesta a:hover{
+  border-radius: 8px;
+  background-color: rgb(212, 150, 236);
+  border: solid 5px  rgb(123, 42, 155);
+  margin-top: 4%;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Mikado";
+  font-size: xx-large;
+}
+
+/* FOOTER */
+
+

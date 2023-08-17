@@ -28,23 +28,17 @@ public class HomeController : Controller
         Juego.InicializarJuego();
         ViewBag.categorias = BD.ObtenerCategorias();
         ViewBag.dificultades = BD.ObtenerDificultades();
-        return View ConfigurarJuego();
+        return View();
     }
 
     public IActionResult Jugar(int dificultad, int categoria)
     {
-        Juego._preguntas = BD.ObtenerPreguntas(dificultad, categoria);
-        Juego._respuestas = BD.ObtenerRespuestas(ViewBag.Preguntas);
-        ViewBag.Puntaje = Juego._puntajeActual;
-        ViewBag.Opciones = Juego._respuestas;
         return View();
     }
 
 
     public IActionResult Fin()
     {
-        ViewBag.Nombre = Juego._username;
-        ViewBag.Puntaje = Juego._puntajeActual;
         
         return View();
     }
@@ -65,19 +59,21 @@ public class HomeController : Controller
 
      public IActionResult Comenzar(string _username, int dificultad, int categoria)
     {
+        /*
         Juego.CargarPartida(username, dificultad, categoria);
         if (Juego.ObtenerProximaPregunta() != null)
         {
-            return View("Jugar");
+            return RedirectToAction("Jugar");
         }
         else
         {
-            return View("ConfigurarJuego");
-        }
+            return RedirectToAction("ConfigurarJuego");
+        }*/
+        return RedirectToAction("ConfigurarJuego");
     }
 
       public IActionResult Jugar()
-    {
+    {/*
         Pregunta PreguntaActual = Juego.ObtenerProximaPregunta();
         if (PreguntaActual == null)
         {
@@ -85,14 +81,14 @@ public class HomeController : Controller
         }
         List<Respuesta> respuestas = Juego.ObtenerProximasRespuestas(PreguntaActual.IdPregunta);
         ViewBag.Pregunta = PreguntaActual;
-        ViewBag.Respuestas = respuestas;
-        return View("Juego");
+        ViewBag.Respuestas = respuestas;*/
+        return View();
     }
 
     [HttpPost]public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
-    {
+    {/*
         bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        ViewBag.RespuestaCorrecta = respuestaCorrecta;
+        ViewBag.RespuestaCorrecta = respuestaCorrecta;*/
         return View("Respuesta");
     }
 

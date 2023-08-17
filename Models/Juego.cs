@@ -21,34 +21,5 @@ public static class Juego
         _username = username;
     }
 
-    public static int ObtenerProximaPregunta(){
-        bool exists = false;
-        int[] numsAlreadyChosen = new int[_preguntas.Count];
-        Random r = new Random();
-        while (!exists){
-            if(Array.IndexOf(numsAlreadyChosen, r.Next(_preguntas.Count)) == -1){
-                exists = false;
-            }else{
-                exists = true;
-            }
-        }
-        return r;
-    }
-    public static bool ObtenerProximasRespuestas(int IdPregunta, int idRespuesta){
-        List<Respuestas> = new List<Respuestas>();
-        bool respuesta = false; 
-        int i = 4;
-        while(i> 0 ){
-            if (IdPregunta = idRespuesta){
-                _puntajeActual  = _puntajeActual  + 100;
-                _cantidadPreguntasCorrectas = _cantidadPreguntasCorrectas + 1; 
-                List<Respuestas> = list.RemoveAt(idPregunta);
-                return respuesta=true; 
-                i=0;
-            }
-        }
-        return respuesta; 
-
-    }
 
 } 
