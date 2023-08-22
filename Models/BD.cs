@@ -32,8 +32,17 @@ public static class BD {
         List<Preguntas> _ObtenerPregs = new List<Preguntas>();
 
         using(SqlConnection db = new SqlConnection(_connectionString) ){
-            string SQL = "SELECT * FROM Pregunta WHERE (@categoria IS NULL OR IdCategoria = @categoria) AND (@dificultad IS NULL OR IdDificultad = @dificultad)";
-            _ObtenerPregs = db.Query<Preguntas>(SQL, new {dificultad = dificultad, categoria = categoria}).ToList();
+            string SQL = @"
+                    CREATE PROCEDURE po_ObtenerPreguntas
+                        @IdCategoria INT,
+                        @IdDificultad INT
+                    AS
+                    BEGIN
+                        SELECT * FROM Pregunta
+                        WHERE @IdCategoria IS NULL OR IdCategoria = @IdCategoria and @IdDificultad IS NULL OR IdDificultad = @IdDificultad
+                    END
+                    EXEC po_ObtenerPreguntas @IdCategoria, @IdDificultad";
+            _ObtenerPregs = db.Query<Preguntas>(SQL, new {IdDificultad = dificultad, IdCategoria = categoria}).ToList();
         }
         return _ObtenerPregs;
     }
