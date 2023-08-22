@@ -32,7 +32,7 @@ public static class BD {
         List<Preguntas> _ObtenerPregs = new List<Preguntas>();
 
         using(SqlConnection db = new SqlConnection(_connectionString) ){
-            string SQL = "SELECT * FROM Preguntas WHERE (@categoria IS NULL OR IdCategoria = @categoria) AND (@dificultad IS NULL OR IdDificultad = @dificultad)";
+            string SQL = "SELECT * FROM Pregunta WHERE (@categoria IS NULL OR IdCategoria = @categoria) AND (@dificultad IS NULL OR IdDificultad = @dificultad)";
             _ObtenerPregs = db.Query<Preguntas>(SQL, new {dificultad = dificultad, categoria = categoria}).ToList();
         }
         return _ObtenerPregs;
@@ -44,7 +44,7 @@ public static class BD {
         foreach(var pregunta in preguntas){
             Respuestas temp = null;
             using(SqlConnection db = new SqlConnection(_connectionString) ){
-                string SQL = "SELECT * FROM Respuestas WHERE IdPregunta = @IdPreg";
+                string SQL = "SELECT * FROM Respuesta WHERE IdPregunta = @IdPreg";
                 temp =  db.QueryFirstOrDefault<Respuestas>(SQL, new {IdPreg = pregunta.IdPregunta});
             }
             _ObtenerRes.Add(temp);
