@@ -33,16 +33,20 @@ public static class BD {
 
         using(SqlConnection db = new SqlConnection(_connectionString) ){
             string SQL = @"
-                    CREATE PROCEDURE po_ObtenerPreguntas
+                    IF EXISTS (SELECT * FROM Pregunta)
+                    DROP PROCEDURE [dbo].[po_ObtenerPreguntas]
+                    GO
+                    CREATE PROCEDURE [dbo].[po_ObtenerPreguntas]
                         @IdCategoria INT,
-                        @IdDificultad INT
+                        @IdDifictultad INT
                     AS
                     BEGIN
                         SELECT * FROM Pregunta
-                        WHERE @IdCategoria IS NULL OR IdCategoria = @IdCategoria and @IdDificultad IS NULL OR IdDificultad = @IdDificultad
+                        WHERE @IdCategoria IS NULL OR IdCategoria = @IdCategoria and @IdDifictultad IS NULL OR IdDifictultad = @IdDifictultad
                     END
-                    EXEC po_ObtenerPreguntas @IdCategoria, @IdDificultad";
-            _ObtenerPregs = db.Query<Preguntas>(SQL, new {IdDificultad = dificultad, IdCategoria = categoria}).ToList();
+                    EXEC po_ObtenerPreguntas
+                    ";
+            _ObtenerPregs = db.Query<Preguntas>(SQL, new {IdDifictultad = dificultad, IdCategoria = categoria}).ToList();
         }
         return _ObtenerPregs;
     }
