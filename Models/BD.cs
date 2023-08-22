@@ -33,7 +33,7 @@ public static class BD {
 
         using(SqlConnection db = new SqlConnection(_connectionString) ){
             string SQL = "SELECT * FROM Preguntas WHERE (@categoria IS NULL OR IdCategoria = @categoria) AND (@dificultad IS NULL OR IdDificultad = @dificultad)";
-            _ObtenerPregs =  db.Query<Preguntas>(SQL, new {dificultad = dificultad, categoria = categoria}).ToList();
+            _ObtenerPregs = db.Query<Preguntas>(SQL, new {dificultad = dificultad, categoria = categoria}).ToList();
         }
         return _ObtenerPregs;
     }
