@@ -21,4 +21,16 @@ public static class Juego
         _username = username;
     }
 
+    public static int VerificarRespuesta(int idPregunta, int idRespuesta){
+        bool rspcorrecta= false;
+
+        if(idPregunta==idRespuesta){
+            _puntajeActual = _puntajeActual + 100;
+            _cantidadPreguntasCorrectas = _cantidadPreguntasCorrectas +1;
+
+            Preguntas.RemoveAt(idPregunta);
+            
+            rspcorrecta=true;
+        }
+    }
 } 
