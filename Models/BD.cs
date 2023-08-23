@@ -26,16 +26,11 @@ public static class BD {
     }
 
     public static List<Preguntas> ObtenerPreguntas(int? dificultad, int? categoria){
-        dificultad = (dificultad == -1) ? null : dificultad;
-        categoria = (categoria == -1) ? null : categoria;
-
         List<Preguntas> _ObtenerPregs = new List<Preguntas>();
-
         using(SqlConnection db = new SqlConnection(_connectionString) ){
-            string SQL = @"
-            SELECT * FROM Pregunta
-                            WHERE @IdCategoria IS NULL OR IdCategoria = @IdCategoria and @IdDifictultad IS NULL OR IdDifictultad = @IdDifictultad";
-            _ObtenerPregs = db.Query<Preguntas>(SQL, new {IdCategoria = dificultad, IdDifictultad = categoria}).ToList();
+            string SQL = @"SELECT * FROM Pregunta
+                        WHERE @IdCategory IS NULL OR IdCategoria = @IdCategory and @IdDifficulty IS NULL OR IdDificultad = @IdDifficulty";
+            _ObtenerPregs = db.Query<Preguntas>(SQL, new {IdCategory = categoria, IdDifficulty = dificultad}).ToList();
         }
         return _ObtenerPregs;
     }

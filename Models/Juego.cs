@@ -12,7 +12,8 @@ public static class Juego
         _username = "";
         _cantidadPreguntasCorrectas = 0;
         _puntajeActual = 0;
-
+        _preguntas = new List<Preguntas>();
+        _respuestas = new List<Respuestas>();
     }
 
     public static void CargarPartida(string username, int dificultad, int categoria){

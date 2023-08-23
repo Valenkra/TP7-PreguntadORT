@@ -1,7 +1,7 @@
 namespace TP7_PreguntadORT.Models;
 
 public class Categorias {
-    public int IdCategoria {get;set;}
-    public string Nombre {get;set;}
-    public string Foto {get;set;}
+    public int? IdCategoria {get;set;}
+    public string? Nombre {get;set;}
+    public string? Foto {get;set;}
 }
