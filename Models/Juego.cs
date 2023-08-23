@@ -24,17 +24,25 @@ public static class Juego
         _username = username;
     }
 
-    public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
-        bool rspcorrectab= false;
-        if(idPregunta == idRespuesta){
-            _puntajeActual = _puntajeActual + 100;
-            _cantidadPreguntasCorrectas = _cantidadPreguntasCorrectas +1;
+    public static Preguntas ObtenerProximaPregunta(){
+        Random r = new Random();
+        return _preguntas[r.Next(_preguntas.Count)];
+    }
 
+    public static List<Respuestas> ObtenerProximaRespuesta(int idPregunta){
+        return _respuestas.FindAll(res => res.IdPregunta == idPregunta);
+    }
+
+    public static bool VerificarRespuesta(int idPregunta, int idRes){
+        bool esCorrecta = false;
+        var item = _respuestas.FirstOrDefault(res => res.IdRespuesta == idRes);
+        if(item.Correcta == true){
+            _puntajeActual += 100;
+            _cantidadPreguntasCorrectas += 1;
             _preguntas.RemoveAt(idPregunta);
-            
-            rspcorrectab=true;
+            esCorrecta = true;
         }
 
-        return rspcorrectab;
+        return esCorrecta;
     }
 } 

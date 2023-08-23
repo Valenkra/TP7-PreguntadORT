@@ -22,6 +22,10 @@ public class HomeController : Controller
         Juego.InicializarJuego();
         Juego.CargarPartida("Hola",-1,-1);
         ViewBag.pregs = Juego._preguntas;
+        Preguntas algo = Juego.ObtenerProximaPregunta();
+        if (algo != null) {
+        var alsk = Juego.ObtenerProximaRespuesta(algo.IdPregunta);
+        }
         return View();
     }
 
