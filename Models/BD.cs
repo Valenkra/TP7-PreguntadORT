@@ -10,7 +10,7 @@ public static class BD {
     public static List<Categorias> ObtenerCategorias(){
         List<Categorias> _ObtenerCate = new List<Categorias>();
         using(SqlConnection db = new SqlConnection(_connectionString) ){
-            string SQL = "SELECT * FROM Categorias";
+            string SQL = "SELECT * FROM Categoria";
             _ObtenerCate =  db.Query<Categorias>(SQL).ToList();
         }
         return _ObtenerCate;
@@ -19,7 +19,7 @@ public static class BD {
     public static List<Dificultades> ObtenerDificultades(){
         List<Dificultades> _ObtenerDif = new List<Dificultades>();
         using(SqlConnection db = new SqlConnection(_connectionString) ){
-            string SQL = "SELECT * FROM Dificultades";
+            string SQL = "SELECT * FROM Dificultad";
             _ObtenerDif =  db.Query<Dificultades>(SQL).ToList();
         }
         return _ObtenerDif;

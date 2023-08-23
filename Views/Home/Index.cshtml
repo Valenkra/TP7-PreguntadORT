@@ -15,14 +15,10 @@
         <img src="imgs/preguntados.PNG">
         <ul>
             <li class="index__button-play">
-                <a href="ConfigurarJuego.html">Jugar</a>
+                <a href='@Url.Action("ConfigurarJuego")'>Jugar</a>
             </li>
         </ul>
     </main>
-
-    @foreach(var preg in ViewBag.pregs){
-        <p>@preg.Enunciado</p><br>
-    }
 </body>
 </html>
 

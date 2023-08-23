@@ -19,13 +19,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Juego.InicializarJuego();
-        Juego.CargarPartida("Hola",-1,-1);
-        ViewBag.pregs = Juego._preguntas;
-        Preguntas algo = Juego.ObtenerProximaPregunta();
-        if (algo != null) {
-        var alsk = Juego.ObtenerProximaRespuesta(algo.IdPregunta);
-        }
         return View();
     }
 
@@ -38,7 +31,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Jugar(int dificultad, int categoria)
+    public IActionResult Jugar(string username, int dificultad, int categoria)
     {
         return View();
     }
