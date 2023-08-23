@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Configuración de Juego";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<img src="imgs/configuracion.png" alt="">
+
+
+        <form action="pregunta.html" method="POST">
+            <div class="form__label">
+                <label for="nombre">Nombre</label>
+                <input type="text" autocomplete="off" name="nombre" required>
+            </div>
+            
+            <div>
+                
+                <select id="floatingSelectGrid" aria-label="Elegir dificultad">
+                    <option selected>Dificultad:</option>
+                    @{ int i = 0;
+                        foreach(var dificultad in ViewBag.dificultades){
+                        <option value="@i">@ViewBag.dificultades.Nombre</option>
+                    }
+                    }
+                    <option value="-1">Todos</option>
+                </select>
+            </div>
+            <div>
+                <select id="floatingSelectGrid" aria-label="Elegir dificultad">
+                    <option selected>Categoria:</option>
+                    <option value="1">Deporte</option>
+                    <option value="2">Cine</option>
+                    <option value="3">Musica</option>
+                    <option value="4">Ciencia</option>
+                    <option value="5">Arte</option>
+                    <option value="-1">Todas</option>
+                </select>
+            </div>
+        
+            <div class="form__div-submit">
+                <input class="submit" id="comenzar" type="submit" value="Comenzar">
+                <input class="submit" id="rehacer" type="reset" value="Rehacer">
+            </div>
+          </form>
+
+</body>
+</html>
