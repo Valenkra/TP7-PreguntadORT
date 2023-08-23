@@ -5,7 +5,7 @@
 
 body {
   background-color: rgb(212, 150, 236);
-  font-family: "Mikado";
+  font-family: "Magdelin", "Mikado";
 }
 
 @font-face {
@@ -24,6 +24,21 @@ body {
   src: url("/assets/magdelin_fonts/Magdelin-ExtraBold.otf");
 }
 
+ol {
+  font-family: "Magdelin";
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ol li {
+  padding: 0 15px;
+}
+
 .logo {
   width: 3.75%;
 
@@ -37,6 +52,7 @@ nav{
   align-items: center;
   justify-content: space-around;
   padding: 10px 0;
+  font-family: "Mikado";
 }
 
 ul{
@@ -53,6 +69,7 @@ ul li a{
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   font-size: 1.3em;
+  font-family: "Mikado";
 }
 
 a:hover {
@@ -147,20 +164,24 @@ form div {
 }
 
 select {
-  height: 2rem;
-  width: 44.8rem;
+  height: 3rem;
+  padding-top: 1px;
+  padding-left: .5rem;
 }
 
 .form__label input {
-  height: 2rem;
+  height: 3rem;
   width:100%;
+  font-size: 80%;
   padding-left: .5rem;
+  font-family: "Magdelin";
 }
 
 
 .form__div-submit {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 
@@ -175,7 +196,7 @@ select {
 .submit {
   font-family: "Mikado";
   background-color: transparent;
-  padding: .5rem 5rem;
+  padding: .5rem 11.3%;
   border-radius: 0;
   border: solid 5px  transparent;
   transition: border-radius 1s, background-color .5s;
