@@ -2,9 +2,9 @@ namespace TP7_PreguntadORT.Models;
 
 public static class Juego 
 {
-    private static string _username;
-    private static int _puntajeActual;
-    private static int  _cantidadPreguntasCorrectas;
+    public static string _username { get; private set; }
+    public static int _puntajeActual { get; private set; }
+    public static int  _cantidadPreguntasCorrectas { get; private set; }
     public static List<Preguntas> _preguntas { get; private set; }
     public static List<Respuestas> _respuestas { get; private set; }
 
@@ -24,9 +24,13 @@ public static class Juego
         _username = username;
     }
 
-    public static Preguntas ObtenerProximaPregunta(){
-        Random r = new Random();
-        return _preguntas[r.Next(_preguntas.Count)];
+    public static int ObtenerProximaPregunta(){
+        if(_preguntas.Count > 0){
+            Random r = new Random();
+            return r.Next(_preguntas.Count);
+        }else {
+            return -1;
+        }
     }
 
     public static List<Respuestas> ObtenerProximaRespuesta(int idPregunta){
