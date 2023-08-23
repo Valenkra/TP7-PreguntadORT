@@ -16,24 +16,25 @@ public static class Juego
         _respuestas = new List<Respuestas>();
     }
 
-    public static void CargarPartida(string username, int dificultad, int categoria){
+    public static void CargarPartida(string username, int difi, int cate){
+        int? dificultad = (difi == -1) ? null : difi;
+        int? categoria = (cate == -1) ? null : cate;
         _preguntas.AddRange(BD.ObtenerPreguntas(dificultad, categoria));
         _respuestas.AddRange(BD.ObtenerRespuestas(_preguntas));
         _username = username;
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
-        bool rspcorrecta= false;
-
-        if(idPregunta==idRespuesta){
+        bool rspcorrectab= false;
+        if(idPregunta == idRespuesta){
             _puntajeActual = _puntajeActual + 100;
             _cantidadPreguntasCorrectas = _cantidadPreguntasCorrectas +1;
 
             _preguntas.RemoveAt(idPregunta);
             
-            rspcorrecta=true;
+            rspcorrectab=true;
         }
 
-        return rspcorrecta;
+        return rspcorrectab;
     }
 } 

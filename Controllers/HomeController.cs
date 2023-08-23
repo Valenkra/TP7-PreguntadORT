@@ -20,7 +20,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         Juego.InicializarJuego();
-        Juego.CargarPartida("Hola",1,1);
+        Juego.CargarPartida("Hola",-1,-1);
         ViewBag.pregs = Juego._preguntas;
         return View();
     }
