@@ -164,15 +164,16 @@ form div {
 }
 
 select {
-  height: 3rem;
-  padding-top: 1px;
-  padding-left: .5rem;
+  padding: 1px 0 1px 5px;
+}
+
+option {
+  font-size: 1.5rem;
 }
 
 .form__label input {
-  height: 3rem;
   width:100%;
-  font-size: 80%;
+  font-size: 1.5rem;
   padding-left: .5rem;
   font-family: "Magdelin";
 }

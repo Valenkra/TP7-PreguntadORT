@@ -43,12 +43,12 @@ public class HomeController : Controller
     public IActionResult Jugar()
     {
         ViewBag.Jugando = true;
-        int idPreg = Juego.ObtenerProximaPregunta();
-        if(idPreg != -1){
+        Preguntas preg = Juego.ObtenerProximaPregunta();
+        if(preg != null){
             ViewBag.username = Juego._username;
             ViewBag.puntos = Juego._puntajeActual;
-            ViewBag.pregunta = Juego._preguntas.FirstOrDefault(preg => preg.IdPregunta == idPreg);
-            ViewBag.respuestas = Juego.ObtenerProximaRespuesta(idPreg);
+            ViewBag.pregunta = preg;
+            ViewBag.respuestas = Juego.ObtenerProximaRespuesta(preg.IdPregunta);
             return View();
         }else{
             return RedirectToAction("Fin");

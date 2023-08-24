@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace TP7_PreguntadORT.Models;
 
 public static class Juego 
@@ -24,17 +28,18 @@ public static class Juego
         _username = username;
     }
 
-    public static int ObtenerProximaPregunta(){
-        if(_preguntas.Count > 0){
+    public static Preguntas ObtenerProximaPregunta(){
+        if(_preguntas.Count == 0){
+            return null;
+        }
+        else{ 
             Random r = new Random();
-            return r.Next(_preguntas.Count);
-        }else {
-            return -1;
+            return _preguntas[r.Next(_preguntas.Count)];
         }
     }
 
     public static List<Respuestas> ObtenerProximaRespuesta(int idPregunta){
-        return _respuestas.FindAll(res => res.IdPregunta == idPregunta);
+        return 0;
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){

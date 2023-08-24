@@ -11,7 +11,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    
+    <main>
+        <span class="pregunta">
+            @ViewBag.pregunta.Enunciado
+        </span>
+        <form action="Respuesta.html" method="POST" style="padding-top: 1rem;">
+
+            @foreach(var res in ViewBag.Respuestas) {
+                <div class="form__answer">
+                    <img class="enform"src="imgs/opcion1.avif" alt="">
+                    <div><label>@res.Contenido</label>
+                    <input type="radio" name="opcion" value=@res.Correcta required>
+                    </div>
+                </div>
+            }
+            
+            <input class="submit" id="enviar-respuesta" type="submit" value="Enviar">
+            
+        </form>
+    </main>
 </body>
 </html>
 
