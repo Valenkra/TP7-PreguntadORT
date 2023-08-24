@@ -39,7 +39,10 @@ public static class Juego
     }
 
     public static List<Respuestas> ObtenerProximaRespuesta(int idPregunta){
-        return 0;
+        List<Respuestas> res = new List<Respuestas>();
+        bool index = _respuestas.FindIndex(res => res.IdPregunta = idPregunta);
+        Console.WriteLine(index);
+        return res;
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){
