@@ -15,8 +15,7 @@
         <span class="pregunta">
             @ViewBag.pregunta.Enunciado
         </span>
-        <form action="Respuesta.html" method="POST" style="padding-top: 1rem;">
-
+        <form action='@Url.Action("Respuesta")' method="POST" style="padding-top: 1rem;">
             @foreach(var res in ViewBag.Respuestas) {
                 <div class="form__answer">
                     <img class="enform"src="imgs/opcion1.avif" alt="">
@@ -25,7 +24,6 @@
                     </div>
                 </div>
             }
-            
             <input class="submit" id="enviar-respuesta" type="submit" value="Enviar">
             
         </form>
@@ -33,6 +31,3 @@
 
 </body>
 </html>
-
-
-

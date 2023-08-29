@@ -108,8 +108,12 @@ main {
   padding-top: 3rem;
 }
 
+option {
+  font-size: 1.5rem;
+}
+
 .pregunta {
-  width: 50%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,20 +164,20 @@ form div {
 .form__label, select {
   display: flex;
   flex-direction: column;
-  width: 22em;
 }
 
 select {
-  padding: 1px 0 1px 5px;
-}
-
-option {
-  font-size: 1.5rem;
+  height: 3rem;
+  padding-top: 1px;
+  padding-left: .5rem;
+  display: block;
+  width: -webkit-fill-available;
 }
 
 .form__label input {
+  height: 3rem;
   width:100%;
-  font-size: 1.5rem;
+  font-size: 80%;
   padding-left: .5rem;
   font-family: "Magdelin";
 }

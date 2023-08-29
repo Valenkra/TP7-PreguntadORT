@@ -11,11 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-   @if(var correct in ViewBag.RespuestaCorrecta){
-    <img src="img/correcto.gif"> /*Poner imagn de correcto*/
-   }else{
-     <img src=""> /*poner imagen de incorrecto*/
-     @ViewBag.
-   }
+    <main class="index">
+        <img src="imgs/preguntados.PNG">
+        <ul>
+            <li class="index__button-play">
+                <a href='@Url.Action("ConfigurarJuego")'>Jugar</a>
+            </li>
+        </ul>
+    </main>
 </body>
 </html>
+
+
+

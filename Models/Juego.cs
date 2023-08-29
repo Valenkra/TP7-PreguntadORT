@@ -29,7 +29,7 @@ public static class Juego
     }
 
     public static Preguntas ObtenerProximaPregunta(){
-        if(_preguntas.Count == 0){
+        if(_preguntas?.Any() != true){
             return null;
         }
         else{ 
@@ -40,9 +40,10 @@ public static class Juego
 
     public static List<Respuestas> ObtenerProximaRespuesta(int idPregunta){
         List<Respuestas> res = new List<Respuestas>();
-        bool index = _respuestas.FindIndex(res => res.IdPregunta = idPregunta);
-        Console.WriteLine(index);
-        return res;
+        var resCount = _respuestas.Select(res => res.IdRespuesta).Distinct().Count();
+        return _respuestas.Where(res => _respuestas.Count(r => r.IdPregunta == r.idPregunta) == resCount);/*
+        res = _respuestas.FindAll(res => res.IdPregunta == idPregunta);
+        return res;*/
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){
