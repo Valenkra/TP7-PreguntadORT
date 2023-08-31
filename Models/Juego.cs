@@ -39,11 +39,8 @@ public static class Juego
     }
 
     public static List<Respuestas> ObtenerProximaRespuesta(int idPregunta){
-        List<Respuestas> res = new List<Respuestas>();
         var resCount = _respuestas.Select(res => res.IdRespuesta).Distinct().Count();
-        return _respuestas.Where(res => _respuestas.Count(r => r.IdPregunta == r.idPregunta) == resCount);/*
-        res = _respuestas.FindAll(res => res.IdPregunta == idPregunta);
-        return res;*/
+        return new List<Respuestas>();
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){

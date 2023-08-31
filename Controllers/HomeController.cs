@@ -48,7 +48,7 @@ public class HomeController : Controller
             ViewBag.username = Juego._username;
             ViewBag.puntos = Juego._puntajeActual;
             ViewBag.pregunta = preg;
-            ViewBag.respuestas = Juego.ObtenerProximaRespuesta(preg.IdPregunta);
+            ViewBag.respuestas = Juego.ObtenerProximaRespuesta(1);
             return View();
         }else{
             return RedirectToAction("Fin");
