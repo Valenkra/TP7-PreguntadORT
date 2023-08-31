@@ -63,7 +63,6 @@ public class HomeController : Controller
 
     [HttpPost]public IActionResult VerificarRespuesta(int idRespuesta, int idPregunta)
     {
-<<<<<<< HEAD
         ViewBag.esCorreta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         return View("Respuesta");
     }
