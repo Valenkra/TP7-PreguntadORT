@@ -63,13 +63,8 @@ public class HomeController : Controller
 
     [HttpPost]public IActionResult VerificarRespuesta(int idRespuesta, int idPregunta)
     {
-        bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        if(respuestaCorrecta=0 ){
-            ViewBag RespuestaIncorrecta = respuestaIncorrecta
-        }else{
-            viewBag.RespuestaCorrecta = respuestaCorrecta;
-        }
-        return View("Respuesta"); */
+        Juego.VerificarRespuesta(idPregunta, idRespuesta);
+        return View("Respuesta");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
