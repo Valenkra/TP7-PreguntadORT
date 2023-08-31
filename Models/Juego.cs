@@ -52,7 +52,6 @@ public static class Juego
             _preguntas.RemoveAt(idPregunta);
             esCorrecta = true;
         }
-
         return esCorrecta;
     }
 } 
