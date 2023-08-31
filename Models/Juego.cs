@@ -46,15 +46,9 @@ public static class Juego
     public static bool VerificarRespuesta(int idPregunta, int idRes){
         bool esCorrecta = false;
         idPregunta = 0;
-        var item = _respuestas.Where(res => res.IdRespuesta == idRes && res.IdPregunta == idPregunta);
-        Console.WriteLine(item.GetType());
-        Console.WriteLine(item);/*
-        if(item.Correcta == true){
-            _puntajeActual += 100;
-            _cantidadPreguntasCorrectas += 1;
-            _preguntas.RemoveAt(idPregunta);
+        if(_respuestas.Find(res => res.IdRespuesta == idRes && res.IdPregunta == idPregunta) != null){
             esCorrecta = true;
-        }*/
+        }
         return esCorrecta;
     }
 } 
