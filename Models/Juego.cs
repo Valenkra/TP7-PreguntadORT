@@ -49,6 +49,7 @@ public static class Juego
         if(_respuestas.Find(res => res.IdRespuesta == idRes && res.IdPregunta == idPregunta) != null){
             esCorrecta = true;
         }
+        _preguntas.RemoveAll(pres => pres.IdPregunta == idPregunta);
         return esCorrecta;
     }
 } 

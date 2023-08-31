@@ -63,6 +63,9 @@ public class HomeController : Controller
 
     [HttpPost]public IActionResult VerificarRespuesta(int idRespuesta, int idPregunta)
     {
+        ViewBag.Jugando = true;
+        ViewBag.username = Juego._username;
+        ViewBag.puntos = Juego._puntajeActual;
         ViewBag.esCorreta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         return View("Respuesta");
         
