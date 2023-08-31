@@ -47,7 +47,8 @@ public static class Juego
         bool esCorrecta = false;
         idPregunta = 0;
         var item = _respuestas.Where(res => res.IdRespuesta == idRes && res.IdPregunta == idPregunta);
-        Console.WriteLine(item.GetType());/*
+        Console.WriteLine(item.GetType());
+        Console.WriteLine(item);/*
         if(item.Correcta == true){
             _puntajeActual += 100;
             _cantidadPreguntasCorrectas += 1;
