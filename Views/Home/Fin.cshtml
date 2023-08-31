@@ -4,3 +4,14 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<main>
+    <section>
+         @ViewBag.username;
+    </section>
+    <section>
+        @ViewBag.puntos; 
+    </section>
+    <section>
+        <a href='@Url.Action("ConfigurarJuego" , "home" )'>Volver a jugar</a>
+    </section>
+</main>
