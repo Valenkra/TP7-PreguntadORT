@@ -12,19 +12,17 @@
 </head>
 <body>
     <main class="index">
-    <img src="imgs/pregs.jfif">
+    <img src="imgs/preguntados.PNG">
     @if(ViewBag.respuestas= true){
-         @ViewBag.respuestas 
         <img src="../imgs/feliz-muy-feliz.gif">
     }else{
-
+        <img src="../imgs/kiste.jpg">
     }
     <ul>
         <li class="index__button-play">
             <a href='@Url.Action("ConfigurarJuego")'>Jugar</a>
         </li>
     </ul>
-       
     </main>
 </body>
 </html>
