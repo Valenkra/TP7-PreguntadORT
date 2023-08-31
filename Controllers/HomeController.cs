@@ -63,20 +63,24 @@ public class HomeController : Controller
 
     [HttpPost]public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
     {
-<<<<<<< HEAD
-        bool rsp= bfhf;
-        bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
+       /*  bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         ViewBag.RespuestaCorrecta = respuestaCorrecta;
-=======
         bool rsp = true;
         bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         if(respuestaCorrecta==true){
             ViewBag.RespuestaCorrecta = respuestaCorrecta;
         }else{
             
+        } */
+        int rsp= 1;
+        
+        bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
+        if(respuestaCorrecta=0 ){
+            ViewBag RespuestaIncorrecta = respuestaIncorrecta
+        }else{
+            viewBag.RespuestaCorrecta = respuestaCorrecta;
         }
->>>>>>> b1a51570adb80a0e1649021e2857fad819d4c366
-        return View("Respuesta");
+        return View("Respuesta"); */
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
