@@ -45,13 +45,15 @@ public static class Juego
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){
         bool esCorrecta = false;
-        var item = _respuestas.FirstOrDefault(res => res.IdRespuesta == idRes);
+        idPregunta = 0;
+        var item = _respuestas.Where(res => res.IdRespuesta == idRes && res.IdPregunta == idPregunta);
+        Console.WriteLine(item.GetType());/*
         if(item.Correcta == true){
             _puntajeActual += 100;
             _cantidadPreguntasCorrectas += 1;
             _preguntas.RemoveAt(idPregunta);
             esCorrecta = true;
-        }
+        }*/
         return esCorrecta;
     }
 } 
