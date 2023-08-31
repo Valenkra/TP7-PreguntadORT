@@ -61,21 +61,15 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpPost]public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
+    [HttpPost]public IActionResult VerificarRespuesta(int idRespuesta, int idPregunta)
     {
-<<<<<<< HEAD
-        bool rsp= bfhf;
-        bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        ViewBag.RespuestaCorrecta = respuestaCorrecta;
-=======
         bool rsp = true;
-        bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        if(respuestaCorrecta==true){
-            ViewBag.RespuestaCorrecta = respuestaCorrecta;
+        bool respuestaCorrecta1 = Juego.VerificarRespuesta(idPregunta, idRespuesta);
+        if(respuestaCorrecta1==true){
+            ViewBag.Respuesta = respuestaCorrecta1;
         }else{
             
         }
->>>>>>> b1a51570adb80a0e1649021e2857fad819d4c366
         return View("Respuesta");
     }
 
