@@ -56,12 +56,6 @@ public class HomeController : Controller
         }
     }
 
-    [HttpPost]
-    public IActionResult Respuesta(bool esCorrecta)
-    {
-        return View();
-    }
-
     public IActionResult Fin()
     {
         return View();
@@ -69,9 +63,19 @@ public class HomeController : Controller
 
     [HttpPost]public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
     {
+<<<<<<< HEAD
         bool rsp= bfhf;
         bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         ViewBag.RespuestaCorrecta = respuestaCorrecta;
+=======
+        bool rsp = true;
+        bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
+        if(respuestaCorrecta==true){
+            ViewBag.RespuestaCorrecta = respuestaCorrecta;
+        }else{
+            
+        }
+>>>>>>> b1a51570adb80a0e1649021e2857fad819d4c366
         return View("Respuesta");
     }
 
