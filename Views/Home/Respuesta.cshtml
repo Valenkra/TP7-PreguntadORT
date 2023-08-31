@@ -13,9 +13,10 @@
 <body>
     <main class="index">
     <img src="imgs/preguntados.PNG">
-    @if(ViewBag.Respuestas= true){
+    @if(ViewBag.RespuestasCorrecta){
         <img src="../imgs/feliz-muy-feliz.gif">
-    }else{
+    }
+    @if(ViewBag.RespuestaIncorrecta){
         <img src="../imgs/kiste.jpg">
     }
     <ul>

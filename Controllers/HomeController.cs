@@ -73,14 +73,14 @@ public class HomeController : Controller
             
         } */
         int rsp= 1;
-        
+
         bool respuestaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        if(respuestaCorrecta=0 ){
-            ViewBag RespuestaIncorrecta = respuestaIncorrecta
+        if(rsp=0 ){
+            ViewBag RespuestaIncorrecta = respuestaIncorrecta;
         }else{
             viewBag.RespuestaCorrecta = respuestaCorrecta;
         }
-        return View("Respuesta"); */
+        return View("Respuesta");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
