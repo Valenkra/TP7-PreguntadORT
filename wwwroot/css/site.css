@@ -113,10 +113,6 @@ option {
 }
 
 .pregunta {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-size: 2.5rem;
   font-family: "Magdelin";
 }
@@ -194,6 +190,14 @@ select {
   display: flex;
   align-items: center;
   font-family: "Magdelin";
+}
+
+.form__answer div {
+  display: flex;
+}
+
+.form__answer div input {
+  margin-right: 10px;
 }
 
 

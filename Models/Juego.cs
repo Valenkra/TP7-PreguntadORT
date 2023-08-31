@@ -40,13 +40,7 @@ public static class Juego
 
     public static IEnumerable<Respuestas> ObtenerProximaRespuesta(int idPregunta){
         List<Respuestas> res = new List<Respuestas>();
-        IEnumerable<Respuestas> temp = _respuestas.Where(res => res.IdPregunta == idPregunta).Select(res => res);
-        temp.Concat(_respuestas.Where(res => res.IdPregunta == idPregunta));
-        Console.WriteLine(temp.GetType());
-        /*Console.WriteLine(temp.Count);
-        Console.WriteLine(temp[0]);
-        Console.WriteLine(temp[0].IdRespuesta);*/
-        return temp;
+        return _respuestas.Where(res => res.IdPregunta == idPregunta);
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){

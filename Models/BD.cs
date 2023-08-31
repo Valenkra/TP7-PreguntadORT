@@ -39,12 +39,10 @@ public static class BD {
     public static List<Respuestas> ObtenerRespuestas(List<Preguntas> preguntas){
         List<Respuestas> _ObtenerRes = new List<Respuestas>();
         foreach(var pregunta in preguntas){
-            Respuestas temp = null;
             using(SqlConnection db = new SqlConnection(_connectionString) ){
                 string SQL = "SELECT * FROM Respuesta WHERE IdPregunta = @IdPreg";
-                temp =  db.QueryFirstOrDefault<Respuestas>(SQL, new {IdPreg = pregunta.IdPregunta});
+                _ObtenerRes.AddRange(db.Query<Respuestas>(SQL, new {IdPreg = pregunta.IdPregunta}));
             }
-            _ObtenerRes.Add(temp);
         }
         return _ObtenerRes;
     }
