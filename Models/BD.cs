@@ -29,8 +29,12 @@ public static class BD {
         List<Preguntas> _ObtenerPregs = new List<Preguntas>();
         using(SqlConnection db = new SqlConnection(_connectionString) ){
             string SQL = @"SELECT * FROM Pregunta
-                        WHERE @IdCategory IS NULL OR IdCategoria = @IdCategory and @IdDifficulty IS NULL OR IdDificultad = @IdDifficulty";
-            _ObtenerPregs = db.Query<Preguntas>(SQL, new {IdCategory = categoria, IdDifficulty = dificultad}).ToList();
+                        WHERE @IdCategory IS NULL OR IdCategoria = @IdCategory";
+            _ObtenerPregs = db.Query<Preguntas>(SQL, new {IdCategory = categoria}).ToList();
+        }
+
+        if(categoria != null) {
+            _ObtenerPregs = _ObtenerPregs.Where(preg => preg.IdDificultad == dificultad).ToList();
         }
         return _ObtenerPregs;
     }

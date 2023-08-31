@@ -23,7 +23,7 @@ public static class Juego
     public static void CargarPartida(string username, int difi, int cate){
         int? dificultad = (difi == -1) ? null : difi;
         int? categoria = (cate == -1) ? null : cate;
-        _preguntas.AddRange(BD.ObtenerPreguntas(dificultad, categoria));
+        _preguntas.AddRange(BD.ObtenerPreguntas(dificultad.Value, categoria));
         _respuestas.AddRange(BD.ObtenerRespuestas(_preguntas));
         _username = username;
     }
@@ -39,17 +39,15 @@ public static class Juego
     }
 
     public static IEnumerable<Respuestas> ObtenerProximaRespuesta(int idPregunta){
-        List<Respuestas> res = new List<Respuestas>();
         return _respuestas.Where(res => res.IdPregunta == idPregunta);
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){
         bool esCorrecta = false;
-        idPregunta = 0;
         if(_respuestas.Find(res => res.IdRespuesta == idRes && res.IdPregunta == idPregunta) != null){
             esCorrecta = true;
         }
-        _preguntas.RemoveAll(pres => pres.IdPregunta == idPregunta);
+        _preguntas.RemoveAll(preg => preg.IdPregunta == idPregunta);
         return esCorrecta;
     }
 } 

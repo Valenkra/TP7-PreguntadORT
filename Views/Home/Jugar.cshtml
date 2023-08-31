@@ -16,12 +16,13 @@
             @ViewBag.pregunta.Enunciado
             
         </span>
-        <form action='@Url.Action("VerificarRespuesta", new {idPregunta = @ViewBag.pregunta.IdPregunta})' method="POST" style="padding-top: 1rem;">
+        <form action='@Url.Action("VerificarRespuesta")' method="POST" style="padding-top: 1rem;">
             @foreach(var res in ViewBag.Respuestas) {
                 <div class="form__answer">
                     <img class="enform"src="@res.Foto" alt="">
                     <div>
                     <input type="radio" name="idRespuesta" value=@res.IdRespuesta required>
+                    <input type="hidden" name="idPregunta" value=@ViewBag.pregunta.IdPregunta>
                     <label>@res.Contenido</label>
                     </div>
                 </div>

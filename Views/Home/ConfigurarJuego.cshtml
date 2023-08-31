@@ -21,26 +21,26 @@
         </div>
         <div>
             <select id="floatingSelectGrid" name="dificultad" aria-label="Elegir dificultad" required>
-                <option value="" selected>Dificultad</option>
+                 <option selected="TRUE" disabled="true">Dificultad:</option>
                 @{ int i = 0;
                     foreach(var dificultad in ViewBag.dificultades){
                         i++;
                     <option value=@i>@dificultad.Nombre</option>
                     }
                 }
-                <option value="-1">Todas</option>
+                <option value="0">Todas</option>
             </select>
         </div>
         <div>
             <select id="floatingSelectGrid" name="categoria" aria-label="Elegir dificultad" required>
-                <option value="" selected>Categoria</option>
+                 <option selected="TRUE" disabled="true">Categoria:</option>
                 @{ i = 0;
                     foreach(var categoria in ViewBag.categorias){
                         i++;
                     <option value=@i>@categoria.Nombre</option>
                     }
                 }
-                <option value="-1">Todas</option>
+                <option value="0">Todas</option>
             </select>
         </div>
     
