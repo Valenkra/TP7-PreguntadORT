@@ -14,6 +14,7 @@
     <main>
         <span class="pregunta">
             @ViewBag.pregunta.Enunciado
+            
         </span>
         <form action='@Url.Action("VerificarRespuesta", new {idPregunta = @ViewBag.pregunta.IdPregunta})' method="POST" style="padding-top: 1rem;">
             @foreach(var res in ViewBag.Respuestas) {
