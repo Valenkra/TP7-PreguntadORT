@@ -12,15 +12,18 @@
 </head>
 <body>
     <main class="index">
-    <img src="imgs/preguntados.PNG">
     @if(ViewBag.esCorrecta == true){
-        <img src="../imgs/crack.jpg">
+        <img src="/imgs/crack.jpg">
     }else{
-        <img src="../imgs/triste.jpg">
-        <p>trolito</p>
+        <div class="loser">
+            <img src="/imgs/loser.webp">
+            <img src="/imgs/loser 2.webp">
+            <img src="/imgs/loser 3.webp">
+        </div>
+        <span style="font-size:2.5rem; margin-bottom:3rem;">Tu respuesta es incorrecta!</span>
     }
     <ul>
-        <a href='@Url.Action("Jugar")' style="font-size:1rem;text-align:center;"><li class="index__button-play">seguir jugando</li></a>
+        <a href='@Url.Action("Jugar")' style="font-size:1rem;text-align:center; margin-bottom:3rem;"><li class="index__button-play">seguir jugando</li></a>
     </ul>
     </main>
 </body>

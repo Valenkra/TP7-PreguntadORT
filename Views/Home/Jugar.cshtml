@@ -16,7 +16,7 @@
             @ViewBag.pregunta.Enunciado
             
         </span>
-        <form action='@Url.Action("VerificarRespuesta")' method="POST" style="padding-top: 1rem;">
+        <form class="elegir-respuesta" action='@Url.Action("VerificarRespuesta")' method="POST" style="padding-top: 1rem;">
             @foreach(var res in ViewBag.Respuestas) {
                 <div class="form__answer">
                     <img class="enform"src="@res.Foto" alt="">

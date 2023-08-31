@@ -1,20 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Fin";
 }
-<h1>@ViewData["Title"]</h1>
-
 <main>
-<h1>Muchas gracias por jugar</h1>
-    <section>
-        <img src="imgs/preguntados(1).jpg">
-    </section> 
-    <section>
-        @ViewBag.username;
-    </section>
-    <section>
-        @ViewBag.puntos; 
-    </section>
-    <section>
-        <a href='@Url.Action("ConfigurarJuego" , "home" )'>Volver a jugar</a>
-    </section>
+<h1>Muchas gracias por jugar <u style="font-size:110%">@ViewBag.username</u>!</h1>
+    <div style="text-align:center;">
+        <img src="/imgs/imagen 1.jpeg">
+        <span>Sacaste <u style="font-size:110%">@ViewBag.puntos</u> puntos</span>
+        @if(ViewBag.puntos>0){
+            <span>, felicidades!</span>
+        }
+    </div>
+    <ul>
+        <a href='@Url.Action("ConfigurarJuego")'><li class="index__button-play">Juguemos otra vez</li></a>
+    </ul>
 </main>

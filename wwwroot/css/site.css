@@ -66,6 +66,7 @@ ul{
 
 ul a {
   text-decoration: none;
+  text-align: center;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   font-size: 1.3em;
@@ -105,11 +106,21 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 option {
   font-size: 1.5rem;
+}
+
+.loser {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.loser img {
+  max-height: 200px;
+  width: 100% !important;
 }
 
 .pregunta {
@@ -165,7 +176,7 @@ form div {
 select {
   height: 3rem;
   padding-top: 1px;
-  padding-left: .5rem;
+  padding: 5px 0 0 5px;
   display: block;
   width: -webkit-fill-available;
 }
@@ -190,16 +201,35 @@ select {
   display: flex;
   align-items: center;
   font-family: "Magdelin";
+  flex-direction: column;
 }
 
 .form__answer div {
   display: flex;
+  align-items: center;
 }
 
 .form__answer div input {
   margin-right: 10px;
 }
 
+.elegir-respuesta {
+  font-size: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 90px; /* Agregué un espacio entre las columnas */
+}
+
+main div span {
+  font-size: 2rem;
+}
+
+.enform {
+  width: 200px;
+  object-fit: cover;
+  object-position: 10% 10%;
+  height: 200px;
+}
 
 /* SUBMIT BUTTON */
 .submit {
@@ -247,8 +277,8 @@ select {
   background-color: rgb(52, 221, 150);
   color: #000;
   font-size: large;
-  margin-top: 3rem;
-  padding-right: 5rem 10rem;
+  margin-top: 1rem;
+  grid-column: 1 / -1;
 }
 
 #enviar-respuesta:hover {

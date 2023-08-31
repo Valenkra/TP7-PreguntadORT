@@ -19,11 +19,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewBag.Jugando = false;
+        ViewBag.Fin = false;
         return View();
     }
 
     public IActionResult ConfigurarJuego()
     {
+        ViewBag.Jugando = false;
+        ViewBag.Fin = false;
         Juego.InicializarJuego();
         ViewBag.categorias = BD.ObtenerCategorias();
         ViewBag.dificultades = BD.ObtenerDificultades();
@@ -58,6 +62,10 @@ public class HomeController : Controller
 
     public IActionResult Fin()
     {
+        ViewBag.Jugando = false;
+        ViewBag.Fin = true;
+        ViewBag.username = Juego._username;
+        ViewBag.puntos = Juego._puntajeActual;
         return View();
     }
 

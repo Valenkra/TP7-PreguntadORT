@@ -1,7 +1,10 @@
 ﻿@{
     if (ViewContext.ViewBag.Jugando == true) {
         Layout = "_JuegoLayout";
-    }else{
+    }else if(ViewContext.ViewBag.Fin == true){
+        Layout = "_FinLayout";
+    }
+    else{
         Layout = "_Layout";
     }
 }
