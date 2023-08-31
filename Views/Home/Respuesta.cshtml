@@ -13,10 +13,10 @@
 <body>
     <main class="index">
     <img src="imgs/preguntados.PNG">
-    @if(ViewBag.Respuestas= true){
-        <img src="../imgs/feliz-muy-feliz.gif">
+    @if(ViewBag.esCorrecta == true){
+        <img src="/imgs/burro.png">
     }else{
-        <img src="../imgs/kiste.jpg">
+        <p>trolito</p>
     }
     <ul>
         <li class="index__button-play">
