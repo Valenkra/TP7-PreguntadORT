@@ -33,6 +33,7 @@ public class HomeController : Controller
     public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
         if(BD.ObtenerPreguntas(dificultad, categoria).Any()){
+            Juego.InicializarJuego();
             Juego.CargarPartida(username,dificultad,categoria);
             return RedirectToAction("Jugar");
         }else{

@@ -19,8 +19,9 @@
             @foreach(var res in ViewBag.Respuestas) {
                 <div class="form__answer">
                     <img class="enform"src="imgs/opcion1.avif" alt="">
-                    <div><label>@res.Contenido</label>
+                    <div>
                     <input type="radio" name="opcion" value=@res.Correcta required>
+                    <label>@res.Contenido</label>
                     </div>
                 </div>
             }
