@@ -20,10 +20,8 @@ public static class Juego
         _respuestas = new List<Respuestas>();
     }
 
-    public static void CargarPartida(string username, int difi, int cate){
-        int? dificultad = (difi == -1) ? null : difi;
-        int? categoria = (cate == -1) ? null : cate;
-        _preguntas.AddRange(BD.ObtenerPreguntas(dificultad.Value, categoria));
+    public static void CargarPartida(string username, int dificultad, int categoria){
+        _preguntas.AddRange(BD.ObtenerPreguntas(dificultad, categoria));
         _respuestas.AddRange(BD.ObtenerRespuestas(_preguntas));
         _username = username;
     }
