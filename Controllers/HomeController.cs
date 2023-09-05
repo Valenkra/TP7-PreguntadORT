@@ -73,10 +73,9 @@ public class HomeController : Controller
     {
         ViewBag.Jugando = true;
         ViewBag.username = Juego._username;
+        ViewBag.esCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         ViewBag.puntos = Juego._puntajeActual;
-        ViewBag.esCorreta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         return View("Respuesta");
-        
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

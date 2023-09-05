@@ -44,8 +44,10 @@ public static class Juego
 
     public static bool VerificarRespuesta(int idPregunta, int idRes){
         bool esCorrecta = false;
-        if(_respuestas.Any(res => res.IdRespuesta == idRes && _respuestas.Any(resp => resp.Correcta == true))){
+        Respuestas? god = _respuestas.Find(res => res.IdRespuesta == idRes && res.Correcta == true);
+        if(god != null && god.Correcta == true){
             esCorrecta = true;
+            _puntajeActual += 30;
         }
         _preguntas.RemoveAll(preg => preg.IdPregunta == idPregunta);
         return esCorrecta;
